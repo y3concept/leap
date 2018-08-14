@@ -6,3 +6,11 @@
 #insights {
   display: none;
 }
+
+.fa-star {
+  color: #007bff;
+}
+
+.bg-indigo {
+  background-color: #050068;
+}
