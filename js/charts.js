@@ -29,8 +29,13 @@ var industryChart = AmCharts.makeChart("industryChart", {
     "balloon": {
         "fixedPosition": true
     },
-    "labelRadius": -5,
+    "labelRadius": -30,
     "labelText": "[[percents]]%",
+    "autoMargins": false,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "marginRight": 0,
+    "pullOutRadius": 0,
     "titles": [
         {
             "id": "Industry",
