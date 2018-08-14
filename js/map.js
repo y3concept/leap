@@ -34,6 +34,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 function pinClicked() {
     $('#insights').hide().slideDown();
+    redrawChart();
 }
 
 for (i = 0; i < noOfPins; i ++) {

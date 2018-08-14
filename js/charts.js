@@ -1,4 +1,4 @@
-AmCharts.makeChart("industryChart", {
+var industryChart = AmCharts.makeChart("industryChart", {
     "hideCredits": true, // removing amchart watermarks; for testing purpose only
     "type": "pie",
     "theme": "light",
@@ -40,7 +40,7 @@ AmCharts.makeChart("industryChart", {
     ]
 });
 
-AmCharts.makeChart("demographicsChart", {
+var demographicsChart = AmCharts.makeChart("demographicsChart", {
     "hideCredits": true, // removing amchart watermarks; for testing purpose only
     "type": "serial",
     "categoryField": "category",
@@ -93,22 +93,22 @@ AmCharts.makeChart("demographicsChart", {
         {
             "category": "Age 15 - 24",
             "Male": Math.floor(Math.random() * 20),
-            "Female": Math.floor(Math.random() * 20),
+            "Female": Math.floor(Math.random() * 20)
         },
         {
             "category": "Age 25 - 34",
             "Male": Math.floor(Math.random() * 20),
-            "Female": Math.floor(Math.random() * 20),
+            "Female": Math.floor(Math.random() * 20)
         },
         {
             "category": "Age 35 - 44",
             "Male": Math.floor(Math.random() * 20),
-            "Female": Math.floor(Math.random() * 20),
+            "Female": Math.floor(Math.random() * 20)
         }
     ]
 });
 
-AmCharts.makeChart("revenueChart", {
+var revenueChart = AmCharts.makeChart("revenueChart", {
     "hideCredits": true,
     "type": "serial",
     "categoryField": "category",
@@ -176,3 +176,77 @@ AmCharts.makeChart("revenueChart", {
         }
     ]
 });
+
+
+function redrawChart() {
+    industryChart.dataProvider = [{
+        "industry": "Finance/ Insurance",
+        "value": Math.floor(Math.random() * 100)
+    },
+        {
+            "industry": "Professional/ Scientific",
+            "value": Math.floor(Math.random() * 100)
+        },
+        {
+            "industry": "Rent/ Real Estate",
+            "value": Math.floor(Math.random() * 100)
+        },
+        {
+            "industry": "Construction",
+            "value": Math.floor(Math.random() * 100)
+        },
+        {
+            "industry": "Healthcare",
+            "value": Math.floor(Math.random() * 100)
+        }];
+
+    industryChart.validateData();
+    industryChart.animateAgain();
+
+    demographicsChart.dataProvider = [
+        {
+            "category": "Age 15 - 24",
+            "Male": Math.floor(Math.random() * 20),
+            "Female": Math.floor(Math.random() * 20)
+        },
+        {
+            "category": "Age 25 - 34",
+            "Male": Math.floor(Math.random() * 20),
+            "Female": Math.floor(Math.random() * 20)
+        },
+        {
+            "category": "Age 35 - 44",
+            "Male": Math.floor(Math.random() * 20),
+            "Female": Math.floor(Math.random() * 20)
+        }
+    ];
+
+    demographicsChart.validateData();
+    demographicsChart.animateAgain();
+
+    revenueChart.dataProvider = [
+        {
+            "category": "Year 1",
+            "column-1": Math.floor(Math.random() * 100)
+        },
+        {
+            "category": "Year 2",
+            "column-1": Math.floor(Math.random() * 300)
+        },
+        {
+            "category": "Year 3",
+            "column-1": Math.floor(Math.random() * 500)
+        },
+        {
+            "category": "Year 4",
+            "column-1": Math.floor(Math.random() * 500)
+        },
+        {
+            "category": "Year 5",
+            "column-1": Math.floor(Math.random() * 1000)
+        }
+    ];
+
+    revenueChart.validateData();
+    revenueChart.animateAgain();
+}
