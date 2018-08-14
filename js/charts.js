@@ -29,10 +29,12 @@ AmCharts.makeChart("industryChart", {
     "balloon": {
         "fixedPosition": true
     },
+    "labelRadius": -5,
     "labelText": "[[percents]]%",
     "titles": [
         {
             "id": "Industry",
+            "size": 15,
             "text": "Industry"
         }
     ]
