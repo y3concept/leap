@@ -1,39 +1,43 @@
-$("#reportResult").hide();
+const dashboard = {};
 
-// update progress bar for cards upon page load
-updateProgressBar('cashflowCard', 'this-week');
-updateProgressBar('cashflowCard', 'this-year');
-updateProgressBar('cashflowCard', 'last-year');
-updateProgressBar('julianCard', 'high');
-updateProgressBar('julianCard', 'low');
-updateProgressBar('julianCard', 'maybe');
+dashboard.init = () => {
+	$("#reportResult").hide();
 
-// update progress bar when running reports
-$("#runReport").click(function(){
-    $("#revenueForm").slideUp();
+	// update progress bar for cards upon page load
+	dashboard.updateProgressBar('cashflowCard', 'this-week');
+	dashboard.updateProgressBar('cashflowCard', 'this-year');
+	dashboard.updateProgressBar('cashflowCard', 'last-year');
+	dashboard.updateProgressBar('julianCard', 'high');
+	dashboard.updateProgressBar('julianCard', 'low');
+	dashboard.updateProgressBar('julianCard', 'maybe');
 
-    updateProgressBar('revenueTab', 'industryProgress');
-    updateProgressBar('revenueTab', 'areaProgress');
-    updateProgressBar('revenueTab', 'modelProgress');
+	// update progress bar when running reports
+	$("#runReport").click(function(){
+		$("#revenueForm").slideUp();
 
-    updateProgressBar('profitTab', 'industryProgress');
-    updateProgressBar('profitTab', 'areaProgress');
-    updateProgressBar('profitTab', 'modelProgress');
+		dashboard.updateProgressBar('revenueTab', 'industryProgress');
+		dashboard.updateProgressBar('revenueTab', 'areaProgress');
+		dashboard.updateProgressBar('revenueTab', 'modelProgress');
 
-    updateProgressBar('arpuTab', 'industryProgress');
-    updateProgressBar('arpuTab', 'areaProgress');
-    updateProgressBar('arpuTab', 'modelProgress');
+		dashboard.updateProgressBar('profitTab', 'industryProgress');
+		dashboard.updateProgressBar('profitTab', 'areaProgress');
+		dashboard.updateProgressBar('profitTab', 'modelProgress');
 
-    $("#reportResult").slideDown();
-});
+		dashboard.updateProgressBar('arpuTab', 'industryProgress');
+		dashboard.updateProgressBar('arpuTab', 'areaProgress');
+		dashboard.updateProgressBar('arpuTab', 'modelProgress');
 
-$('#editQuery').click( function(e) {
-    e.preventDefault();
-    $("#revenueForm").slideDown();
-    return false;
-});
+		$("#reportResult").slideDown();
+	});
 
-function updateProgressBar(tabName, progressName) {
+	$('#editQuery').click( function(e) {
+		e.preventDefault();
+		$("#revenueForm").slideDown();
+		return false;
+	});
+}
+
+dashboard.updateProgressBar = (tabName, progressName) => {
     var value = Math.floor(Math.random() * 100);
     $('#'+tabName+' .'+progressName).css('width', value+'%').attr('aria-valuenow', value);
 }
