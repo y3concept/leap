@@ -40,4 +40,14 @@ dashboard.init = () => {
 dashboard.updateProgressBar = (tabName, progressName) => {
     var value = Math.floor(Math.random() * 100);
     $('#'+tabName+' .'+progressName).css('width', value+'%').attr('aria-valuenow', value);
+
+    if (value > 80) {
+        $('#' + tabName + ' .progress-bar.' + progressName).removeClass().addClass('progress-bar ' + progressName + ' bg-success');
+    } else if (value > 15 && value < 40) {
+        $('#'+tabName+' .progress-bar.'+progressName).removeClass().addClass('progress-bar ' + progressName + ' bg-warning');
+    } else if ( value < 15) {
+        $('#'+tabName+' .progress-bar.'+progressName).removeClass().addClass('progress-bar ' + progressName + ' bg-danger');
+    } else {
+        $('#'+tabName+' .progress-bar.'+progressName).removeClass().addClass('progress-bar ' + progressName);
+    }
 }
