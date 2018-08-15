@@ -26,6 +26,32 @@
   background-color: #050068;
 }
 
-input.custom-select {
+/*input.custom-select {
   background: none;
+}*/
+
+
+.bar-step {
+  position: absolute;
+  z-index: 1;
+  font-size: 12px;
+  left: 50%;
+}
+
+.label-txt {
+  float: right;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+.label-line {
+  float: right;
+  background: #000;
+  height: 15px;
+  width: 3px;
+}
+
+.label-line i {
+  margin-left: -2px;
+  margin-top: 15px;
 }
