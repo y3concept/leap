@@ -32,14 +32,48 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: mapToken
 }).addTo(mymap);
 
-function pinClicked() {
+function pinClicked(event) {
     $('#insights').hide().slideDown();
+    // TODO - send this value somewhere
+    // event.sourceTarget.options.growthPercentage);
     redrawChart();
 }
 
-for (i = 0; i < noOfPins; i ++) {
-    L.marker(createCoOrdinate(i)).addTo(mymap).on('click', pinClicked);
+function createPins() {
+    var pinBlue = L.icon({
+        iconUrl: 'images/pin-blue.png',
+        iconSize: [24, 42],
+        iconAnchor: [12, 42]
+    });
+    var pinRed = L.icon({
+        iconUrl: 'images/pin-red.png',
+        iconSize: [24, 42],
+        iconAnchor: [12, 42]
+    });
+    var pinGreen = L.icon({
+        iconUrl: 'images/pin-green.png',
+        iconSize: [24, 42],
+        iconAnchor: [12, 42]
+    });
+    var pinGold = L.icon({
+        iconUrl: 'images/pin-gold.png',
+        iconSize: [24, 42],
+        iconAnchor: [12, 42]
+    });
+    
+    for (i = 0; i < noOfPins; i ++) {
+        // Every 2nd pin is considered "growth"
+        var growth = i % 2 === 0;
+        var pin = growth ? pinGreen : pinGold;
+        var growthPercentage = Math.floor(Math.random() * 51) + (growth ? 50 : 0);
+        L.marker(createCoOrdinate(i), {
+            icon: pin, 
+            growthPercentage: growthPercentage
+        }).addTo(mymap).on('click', pinClicked);
+    }
 }
+
+createPins();
 
 L.circle(richmond, 900, {
     color: 'red',
