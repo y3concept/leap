@@ -111,9 +111,9 @@
 </div>
 
 <script id="route-dashboard" type="text/x-handlebars-template">
-<div class="container h-100">
+<div class="container ml-0 mr-0 ml-xl-auto mr-xl-auto h-100">
     <div class="row">
-        <div class="bg-indigo text-white d-none d-sm-block h-100 col-12 col-md-3 p-3">
+        <div class="bg-indigo text-white d-none d-sm-block h-100 col-12 col-md-4 p-3">
             <div class="my-business-name pb-3">
                 <h4>My Business Name</h4>
                 <ul class="list-group">
@@ -153,16 +153,17 @@
                 </ul>
             </div>
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-md-8">
             <div class="row">
-                <div class="col pl-3 pb-3">
+                <div class="col p-3">
                     <div class="card">
                         <div class="card-header row m-0">
                             <h5 class="col-9 col-sm-6 col-md-7">How you compare</h5>
                             <div class="col-3 p-0 col-sm-6 col-md-5">
                                 <small class="row align-items-end m-0">
-                                    <span class="d-none d-sm-block pr-2">Based on your business insight</span>
-                                    <a id="editQuery" href="#" class="card-link">Edit query</a>
+                                    <span class="d-none d-sm-block pr-2">Based on your business insight
+                                        <a id="editQuery" href="#" class="card-link">Edit query</a>
+                                    </span>
                                 </small>
                             </div>
                         </div>
@@ -172,27 +173,25 @@
                                 <form name="revenueForm">
                                     <p> To help us understand your business more, tell us...</p>
                                     <div class="form-group row">
-                                        <label for="revenue" class="col-sm-4 col-form-label">Your revenue</label>
-                                        <div class="col-sm-5">
+                                        <label for="revenue" class="col-sm-5 col-xl-4  col-form-label">Your revenue</label>
+                                        <div class="col-sm-7 col-xl-6">
                                             <input type="number" class="form-control" id="revenue">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="profit" class="col-sm-4 col-form-label">Your profit</label>
-                                        <div class="col-sm-5">
+                                        <label for="profit" class="col-sm-5 col-xl-4  col-form-label">Your profit</label>
+                                        <div class="col-sm-7 col-xl-6">
                                             <input type="number" class="form-control" id="profit">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="customers" class="col-sm-4 col-form-label">No. of customers</label>
-                                        <div class="col-sm-5">
+                                        <label for="customers" class="col-sm-5 col-xl-4  col-form-label">No. of customers</label>
+                                        <div class="col-sm-7 col-xl-6">
                                             <input type="number" class="form-control" id="customers">
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <button id="runReport" type="button" class="btn btn-primary">Run update</button>
-                                        </div>
+                                    <div class="row justify-content-center">
+                                        <button id="runReport" type="button" class="btn btn-primary">Run update</button>
                                     </div>
                                 </form>
                             </div>
@@ -264,7 +263,7 @@
                 <div class="col pl-3 pb-3">
                     <div class="card">
                         <div class="card-body row align-items-end">
-                            <div class="col-sm-10 pb-3">
+                            <div class="col-9 col-xl-10 pb-3">
                                 <h5 class="card-title">Your next move...</h5>
                                 <p class="card-text">It looks like you could consider this option next</p>
                             </div>
