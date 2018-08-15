@@ -13,3 +13,7 @@
 .bg-indigo {
   background-color: #050068;
 }
+
+input.custom-select {
+  background: none;
+}

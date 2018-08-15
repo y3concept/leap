@@ -43,9 +43,9 @@ dashboard.updateProgressBar = (tabName, progressName) => {
 
     if (value > 80) {
         $('#' + tabName + ' .progress-bar.' + progressName).removeClass().addClass('progress-bar ' + progressName + ' bg-success');
-    } else if (value > 15 && value < 40) {
+    } else if (value > 30 && value < 50) {
         $('#'+tabName+' .progress-bar.'+progressName).removeClass().addClass('progress-bar ' + progressName + ' bg-warning');
-    } else if ( value < 15) {
+    } else if ( value < 30) {
         $('#'+tabName+' .progress-bar.'+progressName).removeClass().addClass('progress-bar ' + progressName + ' bg-danger');
     } else {
         $('#'+tabName+' .progress-bar.'+progressName).removeClass().addClass('progress-bar ' + progressName);
