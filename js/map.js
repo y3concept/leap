@@ -1,8 +1,8 @@
-var richmond = [-37.823, 144.998];
-var deviation = 0.006;
-var noOfPins = 6;
+const richmond = [-37.823, 144.998];
+const deviation = 0.006;
+const noOfPins = 6;
 // Map token for the www.mapbox.com user petersomogyisensiscomau
-var mapToken = 'pk.eyJ1IjoicGV0ZXJzb21vZ3lpc2Vuc2lzY29tYXUiLCJhIjoiY2prcng3MzlwMjh6aDNzdGhyZnJheXVzdyJ9.JmDqmJg7ttm7TkKy117Efw';
+const mapToken = 'pk.eyJ1IjoicGV0ZXJzb21vZ3lpc2Vuc2lzY29tYXUiLCJhIjoiY2prcng3MzlwMjh6aDNzdGhyZnJheXVzdyJ9.JmDqmJg7ttm7TkKy117Efw';
 
 function randomDeviation() {
     var random = Math.random() * deviation;
@@ -23,23 +23,15 @@ function createCoOrdinate(i) {
     return [latitude, longtitude];
 }
 
-var mymap = L.map('mapid').setView(richmond, 14);
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 17,
-    id: 'mapbox.streets',
-    accessToken: mapToken
-}).addTo(mymap);
-
 function pinClicked(event) {
     $('#insights').hide().slideDown();
     // TODO - send this value somewhere
     // event.sourceTarget.options.growthPercentage);
-    redrawChart();
+	charts.init();
+    charts.redrawChart();
 }
 
-function createPins() {
+function createPins(myMap) {
     var pinBlue = L.icon({
         iconUrl: 'images/pin-blue.png',
         iconSize: [24, 42],
@@ -69,14 +61,25 @@ function createPins() {
         L.marker(createCoOrdinate(i), {
             icon: pin, 
             growthPercentage: growthPercentage
-        }).addTo(mymap).on('click', pinClicked);
+        }).addTo(myMap).on('click', pinClicked);
     }
 }
 
-createPins();
+function initMap() {
+    const myMap = L.map('mapId').setView(richmond, 14);
 
-L.circle(richmond, 900, {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5
-}).addTo(mymap).bindPopup('Your current area of reach');
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 17,
+        id: 'mapbox.streets',
+        accessToken: mapToken
+    }).addTo(myMap);
+    
+    createPins(myMap);
+
+    L.circle(richmond, 900, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(myMap).bindPopup('Your current area of reach');
+}
