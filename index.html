@@ -31,7 +31,7 @@
 
     <div class="text-center pt-5">
         <button type="button" class="btn btn-lg btn-primary"
-                data-toggle="modal" data-target="#signupModal">
+                data-toggle="modal" data-target="#signupModal" onclick="signup.init();">
             Sign Up
         </button>
     </div>
@@ -65,44 +65,39 @@
                     </div>
                     <div class="form-group mb-2">
                         <label for="industry">Industry</label>
-                        <input list="industry" name="input_normal" class="custom-select" placeholder="Select industry">
-                        <datalist id="industry">
-                            <select>
-                                <option value="Construction">Construction</option>
-                                <option value="Finance / Insurance">Finance / Insurance</option>
-                                <option value="Healthcare">Healthcare</option>
-                                <option value="Professional / Scientific">Professional / Scientific</option>
-                                <option value="Rent / Real Estate">Rent / Real Estate</option>
-                                <option value="Trade Services">Trade Services</option>
-                            </select>
-                        </datalist>
+                        <select id="industry" class="custom-select" onchange="signup.selectIndustry();">
+                            <option selected>Select industry</option>
+                            <option value="1">Construction</option>
+                            <option value="2">Finance/ Insurance</option>
+                            <option value="3">Healthcare</option>
+                            <option value="4">Professional/ Scientific</option>
+                            <option value="5">Rent/ Real Estate</option>
+                            <option value="6">Trade Services</option>
+                            <option value="others">Others</option>
+                        </select>
+                        <input type='text' class="form-control mt-2" id='otherIndustry' placeholder="Enter industry"/>
                     </div>
                     <div class="form-group mb-2">
                         <label for="tenure">How long does this business been active?</label>
-                        <input list="tenure" name="input_normal" class="custom-select" placeholder="Select years in industry">
-                        <datalist id="tenure">
-                            <select>
-                                <option value="Less than a year">Less than a year</option>
-                                <option value="1 - 2 years">1 - 2 years</option>
-                                <option value="3 - 5 years">3 - 5 years</option>
-                                <option value="6 - 10 years">6 - 10 years</option>
-                                <option value="Over 10 years">Over 10 years</option>
-                            </select>
-                        </datalist>
+                        <select id="tenure" class="custom-select">
+                            <option selected>Select years in industry</option>
+                            <option value="Less than a year">Less than a year</option>
+                            <option value="1 - 2 years">1 - 2 years</option>
+                            <option value="3 - 5 years">3 - 5 years</option>
+                            <option value="6 - 10 years">6 - 10 years</option>
+                            <option value="Over 10 years">Over 10 years</option>
+                        </select>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="size">Number of employees</label>
-                        <input list="size" name="input_normal" class="custom-select" placeholder="Select no of staff">
-                        <datalist id="size">
-                            <select>
-                                <option value="Less than a year">Less than a year</option>
-                                <option value="1 - 2">1 - 2</option>
-                                <option value="3 - 5">3 - 5</option>
-                                <option value="6 - 10">6 - 10</option>
-                                <option value="11 - 20">11 - 20</option>
-                                <option value="More than 20">More than 20</option>
-                            </select>
-                        </datalist>
+                        <label for="staff">Number of employees</label>
+                        <select id="staff" class="custom-select">
+                            <option selected>Select no of staff</option>
+                            <option value="1 - 2">1 - 2</option>
+                            <option value="3 - 5">3 - 5</option>
+                            <option value="6 - 10">6 - 10</option>
+                            <option value="11 - 20">11 - 20</option>
+                            <option value="More than 20">More than 20</option>
+                        </select>
                     </div>
                 </div>
 
@@ -122,7 +117,7 @@
     <div class="row">
         <div class="bg-indigo text-white d-none d-sm-block h-100 col-12 col-md-4 p-3">
             <div class="my-business-name pb-3">
-                <h4>My Business Name</h4>
+                <h4 id="dash-businessName"> My Business Name </h4>
                 <ul class="list-group">
                     <li class="list-group-item bg-indigo border-0 pl-0">
                         <i class="fa fa-map-pin" aria-hidden="true"></i>
@@ -130,15 +125,15 @@
                     </li>
                     <li class="list-group-item bg-indigo border-0 pl-0">
                         <i class="fa fa-users" aria-hidden="true"></i>
-                        <span class="p-2">6 - 10 Staff</span>
+                        <span id="dash-staff" class="p-2">3 -5 staff</span>
                     </li>
                     <li class="list-group-item bg-indigo border-0 pl-0">
                         <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        <span class="p-2">3 - 5 years</span>
+                        <span id="dash-tenure" class="p-2">1 - 2 years</span>
                     </li>
                     <li class="list-group-item bg-indigo border-0 pl-0">
                         <i class="fa fa-industry" aria-hidden="true"></i>
-                        <span class="p-2">Trade Services</span>
+                        <span id="dash-industry" class="p-2">Trade Services</span>
                     </li>
                 </ul>
             </div>
@@ -452,6 +447,7 @@
 <script src="js/charts.js"></script>
 <script src="js/dashboard.js"></script>
 <script src="js/router.js"></script>
+<script src="js/signup.js"></script>
 
 </body>
 </html>
