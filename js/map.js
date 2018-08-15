@@ -27,6 +27,16 @@ function pinClicked(event) {
     $('#insights').hide().slideDown();
     // TODO - send this value somewhere
     // event.sourceTarget.options.growthPercentage);
+
+    var recommendation = event.sourceTarget.options.growth ? 'Oppurtunity' : 'Caution';
+    $('#insight-recommendation').text(recommendation);
+
+    if (event.sourceTarget.options.growth) {
+        $('#insight-recommendation').append("<i class='fa fa-check pl-2' aria-hidden='true'></i>");
+    } else{
+        $('#insight-recommendation').append("<i class='fa fa-exclamation pl-2' aria-hidden='true'></i>");
+    }
+
 	charts.init();
     charts.redrawChart();
 }
@@ -56,12 +66,14 @@ function createPins(myMap) {
     for (i = 0; i < noOfPins; i ++) {
         // Every 2nd pin is considered "growth"
         var growth = i % 2 === 0;
-        var pin = growth ? pinGreen : pinGold;
+        var pin = growth ? pinGreen : pinRed;
         var growthPercentage = Math.floor(Math.random() * 51) + (growth ? 50 : 0);
         L.marker(createCoOrdinate(i), {
             icon: pin, 
-            growthPercentage: growthPercentage
-        }).addTo(myMap).on('click', pinClicked);
+            growthPercentage: growthPercentage,
+            growth: growth
+        }).addTo(myMap).on('click',pinClicked);
+        //});
     }
 }
 

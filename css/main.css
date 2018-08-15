@@ -10,6 +10,14 @@
   color: #007bff;
 }
 
+.fa-check {
+  color: green;
+}
+
+.fa-exclamation {
+  color: red;
+}
+
 .fa-magic {
   color: #050068;
 }
