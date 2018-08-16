@@ -18,18 +18,14 @@
   color: red;
 }
 
-.fa-magic {
+.fa-magic,
+.fa-caret-up {
   color: #050068;
 }
 
 .bg-indigo {
   background-color: #050068;
 }
-
-/*input.custom-select {
-  background: none;
-}*/
-
 
 .bar-step {
   position: absolute;
@@ -40,13 +36,14 @@
 
 .label-txt {
   float: right;
+  font-size: 10px;
   margin-left: 5px;
   margin-top: 15px;
 }
 
 .label-line {
   float: right;
-  background: #000;
+  background: #050068;
   height: 15px;
   width: 3px;
 }
