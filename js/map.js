@@ -25,16 +25,19 @@ function createCoOrdinate(i) {
 
 function pinClicked(event) {
     $('#insights').hide().slideDown();
+    $('.reco-text').hide();
     // TODO - send this value somewhere
     // event.sourceTarget.options.growthPercentage);
 
-    var recommendation = event.sourceTarget.options.growth ? 'Oppurtunity' : 'Caution';
+    var recommendation = event.sourceTarget.options.growth ? 'Opportunity' : 'Caution';
     $('#insight-recommendation').text(recommendation);
 
     if (event.sourceTarget.options.growth) {
         $('#insight-recommendation').append("<i class='fa fa-check pl-2' aria-hidden='true'></i>");
+        $('#oppotunity-text').show();
     } else{
         $('#insight-recommendation').append("<i class='fa fa-exclamation pl-2' aria-hidden='true'></i>");
+        $('#caution-text').show();
     }
 
 	charts.init();

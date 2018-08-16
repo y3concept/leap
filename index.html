@@ -9,14 +9,18 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
           media="all"/>
     <link rel="stylesheet" type="text/css" href="css/charts.css">
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
-    
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+            integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+            crossorigin=""></script>
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
@@ -26,16 +30,16 @@
 <div id="app"></div>
 
 <script id="route-home" type="text/x-handlebars-template">
-<div class="container h-100 pt-5">
-    <div class="fa fa-magic fa-5x text-center d-block p-5 mt-5"></div>
+    <div class="container h-100 pt-5">
+        <div class="fa fa-magic fa-5x text-center d-block p-5 mt-5"></div>
 
-    <div class="text-center pt-5">
-        <button type="button" class="btn btn-lg btn-primary"
-                data-toggle="modal" data-target="#signupModal" onclick="signup.init();">
-            Sign Up
-        </button>
+        <div class="text-center pt-5">
+            <button type="button" class="btn btn-lg btn-primary"
+                    data-toggle="modal" data-target="#signupModal" onclick="signup.init();">
+                Sign Up
+            </button>
+        </div>
     </div>
-</div>
 </script>
 
 <!-- Modal -->
@@ -113,314 +117,372 @@
 </div>
 
 <script id="route-dashboard" type="text/x-handlebars-template">
-<div class="container ml-0 mr-0 ml-xl-auto mr-xl-auto h-100">
-    <div class="row">
-        <div class="bg-indigo text-white d-none d-sm-block h-100 col-12 col-md-4 p-3">
-            <div class="my-business-name pb-3">
-                <h4 id="dash-businessName"> My Business Name </h4>
-                <ul class="list-group">
-                    <li class="list-group-item bg-indigo border-0 pl-0">
-                        <i class="fa fa-map-pin" aria-hidden="true"></i>
-                        <span class="p-2">Richmond</span>
-                    </li>
-                    <li class="list-group-item bg-indigo border-0 pl-0">
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                        <span id="dash-staff" class="p-2">3 -5 staff</span>
-                    </li>
-                    <li class="list-group-item bg-indigo border-0 pl-0">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        <span id="dash-tenure" class="p-2">1 - 2 years</span>
-                    </li>
-                    <li class="list-group-item bg-indigo border-0 pl-0">
-                        <i class="fa fa-industry" aria-hidden="true"></i>
-                        <span id="dash-industry" class="p-2">Trade Services</span>
-                    </li>
-                </ul>
+    <div class="container ml-0 mr-0 ml-xl-auto mr-xl-auto h-100">
+        <div class="row">
+            <div class="bg-indigo text-white d-none d-sm-block h-100 col-12 col-md-4 p-3">
+                <div class="my-business-name pb-3">
+                    <h4 id="dash-businessName"> My Business Name </h4>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-indigo border-0 pl-0">
+                            <i class="fa fa-map-pin" aria-hidden="true"></i>
+                            <span class="p-2">Richmond</span>
+                        </li>
+                        <li class="list-group-item bg-indigo border-0 pl-0">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <span id="dash-staff" class="p-2">3 -5 staff</span>
+                        </li>
+                        <li class="list-group-item bg-indigo border-0 pl-0">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <span id="dash-tenure" class="p-2">1 - 2 years</span>
+                        </li>
+                        <li class="list-group-item bg-indigo border-0 pl-0">
+                            <i class="fa fa-industry" aria-hidden="true"></i>
+                            <span id="dash-industry" class="p-2">Trade Services</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="my-business pt-3">
+                    <h5>Top Insights</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-indigo border-0 pl-0">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="p-2">Recruiting</span>
+                        </li>
+                        <li class="list-group-item bg-indigo border-0 pl-0">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="p-2">Locating</span>
+                        </li>
+                        <li class="list-group-item bg-indigo border-0 pl-0">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="p-2">Ordering</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="my-business pt-3">
-                <h5>Top Insights</h5>
-                <ul class="list-group">
-                    <li class="list-group-item bg-indigo border-0 pl-0">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <span class="p-2">Recruiting</span>
-                    </li>
-                    <li class="list-group-item bg-indigo border-0 pl-0">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <span class="p-2">Locating</span>
-                    </li>
-                    <li class="list-group-item bg-indigo border-0 pl-0">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <span class="p-2">Ordering</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-12 col-md-8">
-            <div class="row">
-                <div class="col p-3">
-                    <div class="card">
-                        <div class="card-header row m-0">
-                            <h5 class="col-9 col-sm-6 col-md-7">How you compare</h5>
-                            <div class="col-3 p-0 col-sm-6 col-md-5">
-                                <small class="row align-items-end m-0">
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <div class="col p-3">
+                        <div class="card">
+                            <div class="card-header row m-0">
+                                <h5 class="col-9 col-sm-6 col-md-7">How you compare</h5>
+
+                                <div class="col-3 p-0 col-sm-6 col-md-5">
+                                    <small class="row align-items-end m-0">
                                     <span class="d-none d-sm-block pr-2">Based on your business information
-                                        <a id="editQuery" href="#" class="card-link">Edit query</a>
+                                        <a id="editQuery" href="#" class="card-link">Change</a>
                                     </span>
-                                </small>
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div id="revenueForm" class="pl-4 pr-4">
+                                    <form name="revenueForm">
+                                        <p> To help us understand your business more, tell us...</p>
+
+                                        <div class="form-group row">
+                                            <label for="revenue" class="col-sm-5 col-xl-4  col-form-label">Your
+                                                revenue</label>
+
+                                            <div class="col-sm-7 col-xl-6">
+                                                <input type="number" class="form-control" id="revenue">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="profit" class="col-sm-5 col-xl-4  col-form-label">Your
+                                                profit</label>
+
+                                            <div class="col-sm-7 col-xl-6">
+                                                <input type="number" class="form-control" id="profit">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="customers" class="col-sm-5 col-xl-4  col-form-label">No. of
+                                                customers</label>
+
+                                            <div class="col-sm-7 col-xl-6">
+                                                <input type="number" class="form-control" id="customers">
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <button id="runReport" type="button" class="btn btn-primary">Enter</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div id="reportResult">
+                                    <ul class="nav nav-pills justify-content-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link active show" data-toggle="pill" href="#revenueTab">Revenue</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#profitTab">Profit</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#arpuTab">ARPU</a>
+                                        </li>
+                                    </ul>
+
+                                    <h6 class="pt-2" pb-2="">The information you’ve provided shows how your business
+                                        stacks up</h6>
+                                    <hr>
+
+                                    <div class="tab-content pt-3">
+                                        <div id="revenueTab" class="tab-pane fade active show">
+                                            <span>Based on your industry (Nationwide)</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar industryProgress" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <span>Within your area (10km)</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar areaProgress bg-success" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <span>Similar business models</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar modelProgress" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div id="profitTab" class="tab-pane fade">
+                                            <span>Based on your industry (Nationwide)</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar industryProgress" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <span>Within your area (10km)</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar areaProgress bg-success" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <span>Similar business models</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar modelProgress bg-warning" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div id="arpuTab" class="tab-pane fade">
+                                            <span>Based on your industry (Nationwide)</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar industryProgress" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <span>Within your area (10km)</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar areaProgress bg-success" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <span>Similar business models</span>
+
+                                            <div class="progress mb-3">
+                                                <div class="bar-step">
+                                                    <div class="label-txt">Avg</div>
+                                                    <div class="label-line"><i class="fa fa-caret-up"
+                                                                               aria-hidden="true"></i></div>
+                                                </div>
+                                                <div class="progress-bar modelProgress bg-warning" role="progressbar"
+                                                     aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pl-3 pb-3">
+                        <div class="card">
+                            <div class="card-body row align-items-end">
+                                <div class="col-9 col-xl-10 pb-3">
+                                    <h5 class="card-title">Your next move...</h5>
 
-                        <div class="card-body">
-                            <div id="revenueForm" class="pl-4 pr-4">
-                                <form name="revenueForm">
-                                    <p> To help us understand your business more, tell us...</p>
-                                    <div class="form-group row">
-                                        <label for="revenue" class="col-sm-5 col-xl-4  col-form-label">Your revenue</label>
-                                        <div class="col-sm-7 col-xl-6">
-                                            <input type="number" class="form-control" id="revenue">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="profit" class="col-sm-5 col-xl-4  col-form-label">Your profit</label>
-                                        <div class="col-sm-7 col-xl-6">
-                                            <input type="number" class="form-control" id="profit">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="customers" class="col-sm-5 col-xl-4  col-form-label">No. of customers</label>
-                                        <div class="col-sm-7 col-xl-6">
-                                            <input type="number" class="form-control" id="customers">
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <button id="runReport" type="button" class="btn btn-primary">Enter</button>
-                                    </div>
-                                </form>
+                                    <p class="card-text">Thinking about relocating or expanding? It’s important to know
+                                        your options</p>
+                                </div>
+                                <div class="col-2 pb-md-3">
+                                    <button class="btn btn-primary" onclick="navigateTo('route-growth'); initMap();">
+                                        View
+                                    </button>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pl-3 pb-3">
+                        <div class="card">
+                            <div class="card-header pt-5 row m-0 align-items-end bg-indigo text-white">
+                                <h3>Cashflow</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Your cash flow is being watched.<br/>How is it doing?</p>
 
-                            <div id="reportResult">
-                                <ul class="nav nav-pills justify-content-center">
-                                    <li class="nav-item">
-                                        <a class="nav-link active show" data-toggle="pill" href="#revenueTab">Revenue</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#profitTab">Profit</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#arpuTab">ARPU</a>
-                                    </li>
-                                </ul>
-
-                                <h6 class="pt-2" pb-2="">See how you compare</h6>
                                 <hr>
 
-                                <div class="tab-content pt-3">
-                                    <div id="revenueTab" class="tab-pane fade active show">
-                                        <span>Based on your industry (Nationwide)</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar industryProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>Within your area (10km)</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar areaProgress bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>Similar business models</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar modelProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                <div id="cashflowCard">
+                                    <span>This week</span>
+
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar this-week" role="progressbar" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
                                     </div>
-                                    <div id="profitTab" class="tab-pane fade">
-                                        <span>Based on your industry (Nationwide)</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar industryProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>Within your area (10km)</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar areaProgress bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>Similar business models</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar modelProgress bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                    <span>This year</span>
+
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar this-year bg-success" role="progressbar"
+                                             aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <div id="arpuTab" class="tab-pane fade">
-                                        <span>Based on your industry (Nationwide)</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar industryProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>Within your area (10km)</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar areaProgress bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>Similar business models</span>
-                                        <div class="progress mb-3">
-                                            <div class="bar-step">
-                                                <div class="label-txt">Avg</div>
-                                                <div class="label-line"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-                                            </div>
-                                            <div class="progress-bar modelProgress bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                    <span>Last year</span>
+
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar last-year bg-warning" role="progressbar"
+                                             aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col pl-3 pb-3">
-                    <div class="card">
-                        <div class="card-body row align-items-end">
-                            <div class="col-9 col-xl-10 pb-3">
-                                <h5 class="card-title">Your next move...</h5>
-                                <p class="card-text">It looks like you could consider this option next</p>
-                            </div>
-                            <div class="col-2 pb-md-3">
-                                <button class="btn btn-primary" onclick="navigateTo('route-growth'); initMap();">
-                                    View
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col pl-3 pb-3">
-                    <div class="card">
-                        <div class="card-header pt-5 row m-0 align-items-end bg-indigo text-white">
-                            <h3>Cashflow</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Your cash flow is being watched.<br/>How is it doing?</p>
 
-                            <hr>
+                    <div class="col pl-3">
+                        <div class="card">
+                            <div class="card-header pt-5 row m-0 align-items-end bg-indigo text-white">
+                                <h3>Competition</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Your industry is expanding quickly, and profiling your competitive edge is vital</p>
 
-                            <div id="cashflowCard">
-                                <span>This week</span>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar this-week" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span>This year</span>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar this-year bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span>Last year</span>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar last-year bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                <hr>
+
+                                <div id="competitionCard">
+                                    <span>High</span>
+
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar high bg-success" role="progressbar" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                    <span>Low</span>
+
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar low bg-danger" role="progressbar" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                    <span>Maybe</span>
+
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar maybe" role="progressbar" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-
-                <div class="col pl-3">
-                    <div class="card">
-                        <div class="card-header pt-5 row m-0 align-items-end bg-indigo text-white">
-                            <h3>Julian Lim</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-
-                            <hr>
-
-                            <div id="julianCard">
-                                <span>High</span>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar high bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span>Low</span>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar low bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span>Maybe</span>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar maybe" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
-</div>
 </script>
 
 <script id="route-growth" type="text/x-handlebars-template">
-<div class="container h-100">
-    <div class="row">
-        <h1>Location Insights</h1>
-    </div>
-    <div id="mapId" class="mb-5"></div>
-
-    <div id="insights" class="row mb-5">
-        <h1>Our recommendations:</h1>
-        <h3 id="insight-recommendation"></h3>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed vel lectus. Donec odio tempus molestie,
-            porttitor ut, iaculis quis, sem. Nullam rhoncus aliquam metus. Sed ac dolor sit amet purus malesuada
-            congue. Nam sed tellus id magna elementum tincidunt. Phasellus rhoncus. Nulla accumsan, elit sit amet
-            varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Sed elit dui, pellentesque
-            a, faucibus vel, interdum nec, diam. Vivamus luctus egestas leo.</p>
-
-        <div>
-            <h4>Based on:</h4>
-            <p>We actively monitor industries and locations to provide you with our informed recommendations.</p>
-        </div>
+    <div class="container h-100">
         <div class="row">
-            <div class="col-sm">
-                <div id="industryChart"></div>
+            <h1>Location Insights</h1>
+        </div>
+        <div id="mapId" class="mb-5"></div>
+
+        <div id="insights" class="row mb-5">
+            <h1>Our recommendations:</h1>
+
+            <h3 id="insight-recommendation"></h3>
+
+            <p id="opportunity-text" class="reco-text">This location has seen a 30% increase in foot traffic over the
+                past 12 months. The demographics of the local area are very compatible with the profile of your
+                business, and new public transport services have seen more people including this location in their
+                transit plans. There is a low level of direct competition, and a good balance of complementary
+                businesses in the surrounding premises.</p>
+
+            <p id="caution-text" class="reco-text">This location has been impacted by major building works over the past
+                12 months, and foot traffic has dropped by 40%. New parking restrictions mean there are now fewer
+                visitors on weekends. The demographics of residents have moved out of the target market for your
+                industry over the past 18 months. There are 3 direct competitors to your business located in close
+                proximity.</p>
+
+            <div>
+                <h4>Based on:</h4>
+
+                <p>We actively monitor industries and locations to provide you with our informed recommendations.</p>
             </div>
-            <div class="col-sm">
-                <div id="demographicsChart"></div>
-            </div>
-            <div class="col-sm">
-                <div id="revenueChart"></div>
+            <div class="row">
+                <div class="col-sm">
+                    <div id="industryChart"></div>
+                </div>
+                <div class="col-sm">
+                    <div id="demographicsChart"></div>
+                </div>
+                <div class="col-sm">
+                    <div id="revenueChart"></div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <button type="button" class="btn btn-primary mb-5"
-                onclick="navigateTo('route-dashboard'); dashboard.init()">
-            Back
-        </button>
+        <div class="row">
+            <button type="button" class="btn btn-primary mb-5"
+                    onclick="navigateTo('route-dashboard'); dashboard.init()">
+                Back
+            </button>
+        </div>
     </div>
-</div>
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -433,7 +495,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"
         integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc="
         crossorigin="anonymous"></script>
 

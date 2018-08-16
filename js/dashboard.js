@@ -7,9 +7,9 @@ dashboard.init = () => {
 	dashboard.updateProgressBar('cashflowCard', 'this-week');
 	dashboard.updateProgressBar('cashflowCard', 'this-year');
 	dashboard.updateProgressBar('cashflowCard', 'last-year');
-	dashboard.updateProgressBar('julianCard', 'high');
-	dashboard.updateProgressBar('julianCard', 'low');
-	dashboard.updateProgressBar('julianCard', 'maybe');
+	dashboard.updateProgressBar('competitionCard', 'high');
+	dashboard.updateProgressBar('competitionCard', 'low');
+	dashboard.updateProgressBar('competitionCard', 'maybe');
 
 	// update progress bar when running reports
 	$("#runReport").click(function(){
