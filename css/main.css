@@ -48,6 +48,10 @@
   background-color: #1CADE4 !important;
 }
 
+.bg-success {
+  background-color: #42BA97 !important;
+}
+
 a.nav-link {
   color: #2683C6;
 }
