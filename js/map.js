@@ -34,7 +34,7 @@ function pinClicked(event) {
 
     if (event.sourceTarget.options.growth) {
         $('#insight-recommendation').append("<i class='fa fa-check pl-2' aria-hidden='true'></i>");
-        $('#oppotunity-text').show();
+        $('#opportunity-text').show();
     } else{
         $('#insight-recommendation').append("<i class='fa fa-exclamation pl-2' aria-hidden='true'></i>");
         $('#caution-text').show();
