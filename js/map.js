@@ -93,8 +93,8 @@ function initMap() {
     createPins(myMap);
 
     L.circle(richmond, 900, {
-        color: '#66a3ff',
-        fillColor: '#66a3ff',
+        color: '#1CADE4',
+        fillColor: '#1CADE4',
         fillOpacity: 0.5
     }).addTo(myMap).bindPopup('Your current area of reach');
 }

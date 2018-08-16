@@ -7,7 +7,7 @@
 }
 
 .fa {
-  color: #007bff;
+  color: #27CED7;
 }
 
 .fa-check {
@@ -20,11 +20,11 @@
 
 .fa-magic,
 .fa-caret-up {
-  color: #050068;
+  color: #335B74;
 }
 
-.bg-indigo {
-  background-color: #050068;
+.bg-cyan-blue {
+  background-color: #335B74;
 }
 
 .bar-step {
@@ -32,6 +32,28 @@
   z-index: 1;
   font-size: 12px;
   left: 50%;
+}
+
+.btn-blue {
+  background-color: #2683C6;
+  border-color: #2683C6;
+  color: #ffffff;
+}
+
+.bg-warning {
+  background-color: #7DE2E7 !important;
+}
+
+.bg-almost {
+  background-color: #1CADE4 !important;
+}
+
+a.nav-link {
+  color: #2683C6;
+}
+
+.nav-link.active.show {
+  background-color: #2683C6;
 }
 
 .label-txt {

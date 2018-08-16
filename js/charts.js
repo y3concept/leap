@@ -32,6 +32,13 @@ charts.init = () => {
         "balloon": {
             "fixedPosition": true
         },
+        "colors": [
+            "#007BFF",
+            "#28A745",
+            "#2683C6",
+            "#27CED7",
+            "#3E8853"
+        ],
         "labelRadius": -30,
         "labelText": "[[percents]]%",
         "autoMargins": false,
@@ -90,6 +97,10 @@ charts.init = () => {
         ],
         "allLabels": [],
         "balloon": {},
+        "colors": [
+            "#3E8853",
+            "#27CED7"
+        ],
         "titles": [
             {
                 "id": "Title-1",
@@ -134,6 +145,7 @@ charts.init = () => {
                 "balloonText": "[[title]] of [[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
+                "lineAlpha": 0.3,
                 "id": "AmGraph-1",
                 "lineThickness": 3,
                 "title": "Revenue",
@@ -142,6 +154,9 @@ charts.init = () => {
             }
         ],
         "guides": [],
+        "colors": [
+            "#3E8853"
+        ],
         "valueAxes": [
             {
                 "id": "ValueAxis-1",
