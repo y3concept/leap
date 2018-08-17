@@ -52,7 +52,9 @@
   background-color: #42BA97 !important;
 }
 
-a.nav-link {
+a.custom-link,
+a.nav-link,
+.fa-chevron-left {
   color: #2683C6;
 }
 

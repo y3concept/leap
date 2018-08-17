@@ -116,49 +116,53 @@
     </div>
 </div>
 
+<script id="menu-bar" type="text/x-handlebars-template">
+    <div class="bg-cyan-blue text-white d-none d-sm-block col-12 col-md-4 p-3">
+        <div class="my-business-name pb-3">
+            <h4 id="dash-businessName"> My Business Name </h4>
+            <ul class="list-group">
+                <li class="list-group-item bg-cyan-blue border-0 pl-0">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <span class="p-2">Richmond</span>
+                </li>
+                <li class="list-group-item bg-cyan-blue border-0 pl-0">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span id="dash-staff" class="p-2">3 -5 staff</span>
+                </li>
+                <li class="list-group-item bg-cyan-blue border-0 pl-0">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <span id="dash-tenure" class="p-2">1 - 2 years</span>
+                </li>
+                <li class="list-group-item bg-cyan-blue border-0 pl-0">
+                    <i class="fa fa-industry" aria-hidden="true"></i>
+                    <span id="dash-industry" class="p-2">Trade Services</span>
+                </li>
+            </ul>
+        </div>
+        <div class="my-business pt-3">
+            <h5>Top Insights</h5>
+            <ul class="list-group">
+                <li class="list-group-item bg-cyan-blue border-0 pl-0">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="p-2">Recruiting</span>
+                </li>
+                <li class="list-group-item bg-cyan-blue border-0 pl-0">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="p-2">Locating</span>
+                </li>
+                <li class="list-group-item bg-cyan-blue border-0 pl-0">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="p-2">Ordering</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+
 <script id="route-dashboard" type="text/x-handlebars-template">
     <div class="container ml-0 mr-0 ml-xl-auto mr-xl-auto">
         <div class="row">
-            <div class="bg-cyan-blue text-white d-none d-sm-block col-12 col-md-4 p-3">
-                <div class="my-business-name pb-3">
-                    <h4 id="dash-businessName"> My Business Name </h4>
-                    <ul class="list-group">
-                        <li class="list-group-item bg-cyan-blue border-0 pl-0">
-                            <i class="fa fa-map-pin" aria-hidden="true"></i>
-                            <span class="p-2">Richmond</span>
-                        </li>
-                        <li class="list-group-item bg-cyan-blue border-0 pl-0">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <span id="dash-staff" class="p-2">3 -5 staff</span>
-                        </li>
-                        <li class="list-group-item bg-cyan-blue border-0 pl-0">
-                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                            <span id="dash-tenure" class="p-2">1 - 2 years</span>
-                        </li>
-                        <li class="list-group-item bg-cyan-blue border-0 pl-0">
-                            <i class="fa fa-industry" aria-hidden="true"></i>
-                            <span id="dash-industry" class="p-2">Trade Services</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="my-business pt-3">
-                    <h5>Top Insights</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item bg-cyan-blue border-0 pl-0">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <span class="p-2">Recruiting</span>
-                        </li>
-                        <li class="list-group-item bg-cyan-blue border-0 pl-0">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <span class="p-2">Locating</span>
-                        </li>
-                        <li class="list-group-item bg-cyan-blue border-0 pl-0">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <span class="p-2">Ordering</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            {{> menu}}
             <div class="col-12 col-md-8">
                 <div class="row">
                     <div class="col p-3">
@@ -169,7 +173,7 @@
                                 <div class="col-3 p-0 col-sm-6 col-md-5">
                                     <small class="row align-items-end m-0">
                                     <span class="d-none d-sm-block pr-2">Based on your business information
-                                        <a id="editQuery" href="#" class="card-link">Change</a>
+                                        <a id="editQuery" href="#" class="custom-link">Change</a>
                                     </span>
                                     </small>
                                 </div>
@@ -435,51 +439,70 @@
 </script>
 
 <script id="route-growth" type="text/x-handlebars-template">
-    <div class="container h-100">
+    <div class="container ml-0 mr-0 ml-xl-auto mr-xl-auto">
         <div class="row">
-            <h1>Location Insights</h1>
-        </div>
-        <div id="mapId" class="mb-5"></div>
+            {{> menu}}
 
-        <div id="insights" class="row mb-5">
-            <h1>Our recommendations:</h1>
+            <div class="col-12 col-md-8 pl-0">
+                <div id="mapId" class="mb-5"></div>
 
-            <h3 id="insight-recommendation"></h3>
+                <div id="insights" class="mb-5 col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Our recommendations:</h4>
 
-            <p id="opportunity-text" class="reco-text">This location has seen a 30% increase in foot traffic over the
-                past 12 months. The demographics of the local area are very compatible with the profile of your
-                business, and new public transport services have seen more people including this location in their
-                transit plans. There is a low level of direct competition, and a good balance of complementary
-                businesses in the surrounding premises.</p>
+                            <h5 id="insight-recommendation" class="pt-3"></h5>
 
-            <p id="caution-text" class="reco-text">This location has been impacted by major building works over the past
-                12 months, and foot traffic has dropped by 40%. New parking restrictions mean there are now fewer
-                visitors on weekends. The demographics of residents have moved out of the target market for your
-                industry over the past 18 months. There are 3 direct competitors to your business located in close
-                proximity.</p>
+                            <p id="opportunity-text" class="reco-text pb-3">This location has seen a 30% increase in foot traffic
+                                over the past 12 months. The demographics of the local area are very compatible with the profile
+                                of your business, and new public transport services have seen more people including this
+                                location in their transit plans. There is a low level of direct competition, and a good balance
+                                of complementary businesses in the surrounding premises.</p>
 
-            <div>
-                <h4>Based on:</h4>
-                <small>We actively monitor industries and locations to provide you with our informed recommendations.</small>
+                            <p id="caution-text" class="reco-text pb-3">This location has been impacted by major building works over
+                                the past 12 months, and foot traffic has dropped by 40%. New parking restrictions mean there are
+                                now fewer visitors on weekends. The demographics of residents have moved out of the target
+                                market for your industry over the past 18 months. There are 3 direct competitors to your
+                                business located in close proximity.</p>
+
+                            <hr>
+
+                            <h5 class="pt-3">Property</h5>
+
+                            <p>Development has increased and is continuing to bring new professional people to the area.</p>
+
+                            <h5 class="pt-3">Transport</h5>
+
+                            <p>The recent renovation and upgrade of all lines has eased congestion and
+                                supplied the area with an extra 5 commuter services daily.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="p-3">
+                        <h4>This is based on:</h4>
+                        <p>We actively monitor industries and locations to provide you with our informed recommendations.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl">
+                            <div id="industryChart"></div>
+                        </div>
+                        <div class="col-xl">
+                            <div id="demographicsChart"></div>
+                        </div>
+                        <div class="col-xl">
+                            <div id="revenueChart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="custom-link" onclick="navigateTo('route-dashboard'); dashboard.init()">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        Back to dashboard
+                    </a>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <div id="industryChart"></div>
-                </div>
-                <div class="col-sm">
-                    <div id="demographicsChart"></div>
-                </div>
-                <div class="col-sm">
-                    <div id="revenueChart"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <button type="button" class="btn btn-blue mb-5"
-                    onclick="navigateTo('route-dashboard'); dashboard.init()">
-                Back
-            </button>
         </div>
     </div>
 </script>

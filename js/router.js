@@ -16,3 +16,5 @@ router.add('route-growth');
 const navigateTo = router.navigateTo;
 
 navigateTo('route-home');
+
+Handlebars.registerPartial("menu", $("#menu-bar").html());
