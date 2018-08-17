@@ -12,6 +12,7 @@ router.navigateTo = (divId) => {
 router.add('route-home');
 router.add('route-dashboard');
 router.add('route-growth');
+router.add('menu-bar');
 
 const navigateTo = router.navigateTo;
 
