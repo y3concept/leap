@@ -142,7 +142,7 @@ charts.init = () => {
         "trendLines": [],
         "graphs": [
             {
-                "balloonText": "[[title]] of [[category]]:[[value]]",
+                "balloonText": "[[category]] [[title]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "lineAlpha": 0.3,
@@ -293,7 +293,7 @@ charts.initMarketChart = () => {
         "trendLines": [],
         "graphs": [
             {
-                "balloonText": "[[title]] of [[category]]:[[value]]",
+                "balloonText": "[[title]] for [[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "lineAlpha": 0.3,
