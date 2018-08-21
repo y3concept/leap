@@ -299,7 +299,7 @@ charts.initMarketChart = () => {
                 "lineAlpha": 0.3,
                 "id": "AmGraph-1",
                 "lineThickness": 3,
-                "title": "Demands",
+                "title": "Search Demand",
                 "type": "smoothedLine",
                 "valueField": "column-1"
             }
@@ -324,7 +324,7 @@ charts.initMarketChart = () => {
             {
                 "id": "Title-1",
                 "size": 15,
-                "text": "Demands"
+                "text": "Search Demand"
             }
         ],
         "dataProvider": [
