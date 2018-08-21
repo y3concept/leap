@@ -201,7 +201,6 @@ charts.init = () => {
     });
 }
 
-
 charts.redrawChart = () => {
     charts.industryChart.dataProvider = [
         {
@@ -275,4 +274,108 @@ charts.redrawChart = () => {
 
     charts.revenueChart.validateData();
     //revenueChart.animateAgain();
+}
+
+
+charts.initMarketChart = () => {
+    charts.marketChart = AmCharts.makeChart("marketChart", {
+        "hideCredits": true,
+        "type": "serial",
+        "categoryField": "category",
+        "startDuration": 1,
+        "fontSize": 13,
+        "theme": "default",
+        "categoryAxis": {
+            "gridPosition": "start",
+            "gridThickness": 0,
+            "labelRotation": 45
+        },
+        "trendLines": [],
+        "graphs": [
+            {
+                "balloonText": "[[title]] of [[category]]:[[value]]",
+                "bullet": "round",
+                "bulletSize": 10,
+                "lineAlpha": 0.3,
+                "id": "AmGraph-1",
+                "lineThickness": 3,
+                "title": "Demands",
+                "type": "smoothedLine",
+                "valueField": "column-1"
+            }
+        ],
+        "guides": [],
+        "colors": [
+            "#3E8853"
+        ],
+        "valueAxes": [
+            {
+                "id": "ValueAxis-1",
+                "position": "bottom",
+                "autoGridCount": false,
+                "axisThickness": 0,
+                "tickLength": 0,
+                "title": ""
+            }
+        ],
+        "allLabels": [],
+        "balloon": {},
+        "titles": [
+            {
+                "id": "Title-1",
+                "size": 15,
+                "text": "Demands"
+            }
+        ],
+        "dataProvider": [
+            {
+                "category": "Jan",
+                "column-1": Math.floor(Math.random() * 100)
+            },
+            {
+                "category": "Feb",
+                "column-1": Math.floor(Math.random() * 200) + 70
+            },
+            {
+                "category": "Mar",
+                "column-1": Math.floor(Math.random() * 300) + 170
+            },
+            {
+                "category": "Apr",
+                "column-1": Math.floor(Math.random() * 400) + 270
+            },
+            {
+                "category": "May",
+                "column-1": Math.floor(Math.random() * 500) + 370
+            },
+            {
+                "category": "Jun",
+                "column-1": Math.floor(Math.random() * 600) + 470
+            },
+            {
+                "category": "Jul",
+                "column-1": Math.floor(Math.random() * 700) + 570
+            },
+            {
+                "category": "Aug",
+                "column-1": Math.floor(Math.random() * 800) + 670
+            },
+            {
+                "category": "Sep",
+                "column-1": Math.floor(Math.random() * 700) + 770
+            },
+            {
+                "category": "Oct",
+                "column-1": Math.floor(Math.random() * 1000) + 870
+            },
+            {
+                "category": "Nov",
+                "column-1": Math.floor(Math.random() * 1100) + 870
+            },
+            {
+                "category": "Dec",
+                "column-1": Math.floor(Math.random() * 1200) + 970
+            }
+        ]
+    });
 }

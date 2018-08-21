@@ -11,6 +11,8 @@ dashboard.init = () => {
 	dashboard.updateProgressBar('competitionCard', 'low');
 	dashboard.updateProgressBar('competitionCard', 'maybe');
 
+	charts.initMarketChart();
+
 	// update progress bar when running reports
 	$("#runReport").click(function(){
 		$("#revenueForm").slideUp();
